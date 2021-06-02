@@ -1,0 +1,63 @@
+Ef Core DB First
+-----------------
+1. Create Project ASP .NET Core Web Api
+2. Create Directory config, Models(Entities & ViewModel)
+3. Move appsettings.json to config directory
+4. Move WeatherForecast.cs to Models -> ViewModel
+5. Update WeatherForecast.cs namespace to "efcodefirstapi.Models"
+7. Update WeatherForecastController.cs
+	in using section :
+	
+	using efcodefirstapi.Models;
+	
+	inside body class (Get Method):
+	
+	[HttpGet]
+        public IEnumerable<WeatherForecastViewModel> Get()
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecastViewModel
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
+
+8. Update Program.cs
+
+	public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(c => {
+                    c.AddJsonFile("config/appsettings.json", optional: true, reloadOnChange: true);
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+9. Update appsettings.json Add ConnectionString
+	
+	"ConnectionStrings": {
+		"AppConnStr": "Data Source=.;initial catalog=EFCoreDemo;user id=sa;password=P@ssw0rd"
+	  },
+	  
+10. Run Apps for testing. Make sure apps is running well and then stop Apps
+11. Open Package Manager Console
+12. Database Scaffold
+	template :
+	
+	dotnet ef dbcontext scaffold “{ConnString}” Microsoft.EntityFrameworkCore.SqlServer –o {ModelsOutputDir} –n {NamespaceForModels} --context-dir {AppDbContextDir} –c {AppDbContextName} –p “{CSProjPath}”
+	
+	study case :
+	dotnet ef dbcontext scaffold "Data Source=.;initial catalog=EFCoreDemo;user id=sa;password=P@ssw0rd" Microsoft.EntityFrameworkCore.SqlServer -o Models/Entities -n efcodefirstapi.Models --context-dir DataAccess -c ApplicationDbContext -p "efcodefirstapi\efcodefirstapi.csproj"
+	
+13. Update Startp.cs
