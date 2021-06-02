@@ -1,6 +1,14 @@
 # Description
 Entity Framework Core DB First Approach. This project using ASP .NET Core Web API project template with modification. Using Entity Framework Core for object-database mapper (ORM).
 
+# Create Sample Project
+
+Open Visual Studio 2019 and create new project using **ASP.NET Core Web API**. Project Name : efcoredbfirstapi.
+
+![CreateNewProject1](images/CreateNewProject1.jpg?raw=true)
+![CreateNewProject2](images/CreateNewProject2.jpg?raw=true)
+![CreateNewProject3](images/CreateNewProject3.jpg?raw=true)
+
 # Project Content
 Project Content using default ASP .NET Core Web API project template with some additional and modification.  
 1. config  
@@ -170,3 +178,11 @@ Run Apps for testing :
 
 ![RunApps1](images/RunApps1.jpg?raw=true)
 ![RunApps2](images/RunApps2.jpg?raw=true)
+
+
+# Reference
+https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx  
+https://docs.microsoft.com/en-us/ef/efcore-and-ef6/  
+https://www.learnentityframeworkcore.com/  
+https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli  
+https://docs.microsoft.com/en-us/ef/core/cli/powershell  
