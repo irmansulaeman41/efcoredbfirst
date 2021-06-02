@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using efcodefirstapi.Models;
+using efcoredbfirstapi.Models;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace efcodefirstapi.DataAccess
+namespace efcoredbfirstapi.DataAccess
 {
     public partial class ApplicationDbContext : DbContext
     {

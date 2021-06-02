@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace efcodefirstapi.Models
+namespace efcoredbfirstapi.Models
 {
     public partial class Command
     {

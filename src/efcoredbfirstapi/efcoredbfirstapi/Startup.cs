@@ -12,9 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using efcodefirstapi.DataAccess;
+using efcoredbfirstapi.DataAccess;
 
-namespace efcodefirstapi
+namespace efcoredbfirstapi
 {
     public class Startup
     {
@@ -35,7 +35,7 @@ namespace efcodefirstapi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "efcodefirstapi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "efcoredbfirstapi", Version = "v1" });
             });
         }
 
@@ -46,7 +46,7 @@ namespace efcodefirstapi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "efcodefirstapi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "efcoredbfirstapi v1"));
             }
 
             app.UseHttpsRedirection();

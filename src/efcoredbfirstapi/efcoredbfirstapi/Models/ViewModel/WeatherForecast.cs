@@ -1,6 +1,6 @@
 using System;
 
-namespace efcodefirstapi.Models
+namespace efcoredbfirstapi.Models
 {
     public class WeatherForecastViewModel
     {

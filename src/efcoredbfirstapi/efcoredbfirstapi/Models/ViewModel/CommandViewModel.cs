@@ -1,4 +1,4 @@
-﻿namespace efcodefirstapi.Models.ViewModel
+﻿namespace efcoredbfirstapi.Models.ViewModel
 {
     public class CommandViewModel
     {

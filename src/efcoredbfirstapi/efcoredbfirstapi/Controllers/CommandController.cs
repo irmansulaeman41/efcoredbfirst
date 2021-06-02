@@ -1,5 +1,5 @@
-﻿using efcodefirstapi.DataAccess;
-using efcodefirstapi.Models.ViewModel;
+﻿using efcoredbfirstapi.DataAccess;
+using efcoredbfirstapi.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace efcodefirstapi.Controllers
+namespace efcoredbfirstapi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
